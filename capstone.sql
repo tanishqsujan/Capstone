@@ -85,7 +85,23 @@ Customer1.city AS "City",
 Salesman1.name AS "Salesman",
 Salesman1.Comission
 FROM Customer1, Salesman1
-WHERE 
+WHERE Customer1.Salesman_id= Salesman1.Salesman_id
+AND Salesman1.Comission
+BETWEEN .12 AND .14;
+
+SELECT ord_no, cust_name, Comission AS "Comission%",
+purch_amt*Comission AS "Comission"
+FROM Salesman1, Orders1, Customer1
+WHERE Orders1.Customer_id= Customer1.Customer_id
+AND Orders1.Salesman_id= Salesman1.Salesman_id
+AND Customer1.grade>= 200;
+
+SELECT*
+FROM Customer1 a, Orders1 b 
+WHERE a.Customer_id= B.Customer_id
+AND b.ord_date= '2012-10-05';
+
+
 
 
 
